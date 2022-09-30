@@ -1,3 +1,5 @@
+import random
+
 class Personnage:
     def __init__(self, nom, pdv, degat):
         self.__nom = nom

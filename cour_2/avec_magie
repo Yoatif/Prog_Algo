@@ -1,0 +1,86 @@
+import random
+xp = 0
+Lvl = 0
+degats = 0
+GobelinsVaincus = 0
+GobelinPV = 0
+degatsGobelin = 0
+Pv = 10
+Attaque = 0
+Fuite = 0
+Magie = 0
+choix = ""
+
+
+#boucle de jeu
+while (Pv > 0) :
+    if xp >= 10 :
+        Lvl += 1
+    print ("Gobelins tués : " ,GobelinsVaincus, )
+    print ("Niveau : " ,Lvl,) 
+        #PreCombat
+    Pv = 10
+    GobelinPV = 10
+    print ("Un vilain truc moche spawn")
+    input ()
+
+ #Combat avec Gobelin
+    GobelinPV = 10
+    while (GobelinPV > 0 and Pv > 0):
+        degats = random.randint (0,5)
+        degatsGobelin = random.randint (0,3)
+        Magie = random.randint (0,1)
+        Magie *= 5
+        Fuite = random.randint (0,10)
+
+        print  ("C'est ton tour ! Que vas tu faire ?")
+        print  (" 1: Attaque ")
+        print (" 2: Magie")
+        print (" 3: Fuite")
+        choix = input ()
+        if (choix == "1"):
+            if degats <= 4 and degats > 0 :
+                print("Vous infligez " ,degats, "au gobelin !")
+                GobelinPV -= degats
+                
+            if degats > 4:
+                  print ("CRITIQUE ! Vous infligez " ,degats, "au gobelin !")
+                  GobelinPV -= degats
+
+            if degats == 0  :
+                  print ("Grosse merde !" ,degats, "infligés au gobelin !")
+                  GobelinPV -= degats
+
+
+
+        if (choix == "2") :
+             print ("Boule de feu ! " ,Magie, " infligés !")
+             GobelinPV -= Magie
+             
+             
+
+        if (choix == "3"):
+             if Fuite < 5 :           
+                print ("Le truc moche est toujours derrière vous ! Vous avez raté votre fuite !")
+             else :
+                print ("Vous fuyez comme un couard ! Prévisible...")   
+
+            
+  
+        print ("Il lui reste " ,GobelinPV,)
+        if GobelinPV > 0 :
+             Pv -= degatsGobelin
+             print ("Le gobelin riposte et vous fait " ,degatsGobelin, )
+             print ("Prend garde ! Il te reste " ,Pv, "Pv !")
+        if Pv <= 0 :
+             print ("Nooonnn Gros noob tu est mort !")
+ 
+         
+        input ()
+    GobelinsVaincus += 1
+    if GobelinPV <= degats :
+        xp += random.randint (1,5)
+
+
+    print ("Bah bravo champion !")
+    input ()
