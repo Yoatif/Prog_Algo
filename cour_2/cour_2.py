@@ -2,62 +2,44 @@ import random
 
 gobelinPv = 10
 gobelinLvl = 1
-gobelinVaincu = 0
-degat = 0
-
+gobelinVaincus =0
 xpJoueur = 0
-lvlJoueur = 1
-hpJoueur = 100 +(2.5*lvlJoueur)
+lvJoueur =1
+degats =0
+touche = ' '
 
-potion = 20
-
-
-
-while (True):   
+while(True):
     gobelinPv = random.randint(4,6)*gobelinLvl
-    print("vous rencontrez un gobelin de lvl", gobelinLvl, ", il a", gobelinPv, "PdV")
-    while (gobelinPv > 0):
+    print("Un Goblin Sauvage apparait il a ", gobelinPv, "Pvs")
+    while(gobelinPv>0):
         
-        print("quel action souhaitez vous éxecuter ?")
-        action = input("1 attaquer, 2 boire une potion, 3 fuir")
-
-        if (action == "1"):
-            degat = random.randint(1,3)
-            gobelinPv -= degat
-            print ("le gobelin a", gobelinPv ,"PdV restant")
+        print ("que voulez vous faire ?")
+        print ("A - Attaquer, B - Se Defendre, C - Fuir")
+        
+        touche = input()
+        
+        #Attaquer 
+        if(touche == 'a'):
+            degats = random.randint(1,3*lvJoueur)
+            gobelinPv = gobelinPv - degats
+            print("Le gobelin a ", gobelinPv, " pvs")
             input()
-            print ("Le gobelin vous attaque")
-            hpJoueur -= (random.randint(1,3))
-            if (gobelinPv < 0):               
-                print ("vous avez vaincu le Gobelin.")
-        if (action == "2"):
-            print("vous prenez une potion")
-            if (hpJoueur <= 80):
-                hpJoueur = hpJoueur + potion
-                print ("vous avez ", hpJoueur,"PDV")
-
-            else:
-                hpJoueur = 100
-                print("vous avez", hpJoueur,"PDV")
-
-
-        if (action == "3"):
-            fuite = random.randint(1,20)
-            if (fuite >=16):
-                print("vous avez fuis")
-
-
-        #gestion xp gobelin
-        gobelinVaincu +=1
-        if (gobelinVaincu>= 7):
-            gobelinVaincu = 0
-            gobelinLvl +=1
-
-        #gestion xp joueur 
-        xpJoueur += (gobelinLvl * 2)
-        if(xpJoueur>=lvlJoueur*100):
-            print("Felicitation tu as pris un level")
-            input()
-            lvlJoueur = lvlJoueur+1
-
-
+        else:
+            print("Merci d'appuyer sur une touche correcte")
+    print("Vous avez vaincu le gobelin")
+    
+    #Gestion xp Gobelin
+    gobelinVaincus += 1
+    if(gobelinVaincus>=7):
+        gobelinVaincus = 0
+        gobelinLvl+=1
+    
+    #Gestion xp Joueur
+    xpJoueur += gobelinLvl*2
+    if(xpJoueur>lvJoueur*5):
+        lvJoueur+=1
+        xpJoueur=0
+        print ("Felicitation ma geulle tu es niveau ", lvJoueur)
+    
+    
+    input()
