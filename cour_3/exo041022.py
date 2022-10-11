@@ -31,5 +31,23 @@
 #        print("*",i*" ","*")
 #    print(i*"*")
 
-#exo 6
+#Exo 1
 
+hello = "Hello world"
+print(hello)
+
+
+#exo 2
+
+a = 99
+b = 999
+c= a+b
+print(c)
+
+#exo 6
+for i in range (1,10):
+    print (i*"*")
+    for j in range(1,i-4):
+        n = i-4
+        print("*",i*" ","*")
+    print(i*"*")
