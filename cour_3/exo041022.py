@@ -24,12 +24,12 @@
 #        print(i*"*")
 
 #exo 5
-#for i in range (1,10):
-#    print (i*"*")
-#    for j in range(1,i-4):
-#        n = i-4
-#        print("*",i*" ","*")
-#    print(i*"*")
+for i in range (1,10):
+    print (i*"*")
+    for j in range(1,i-4):
+        n = i-4
+        print("*",i*" ","*")
+    print(i*"*")
 
 #Exo 1
 
