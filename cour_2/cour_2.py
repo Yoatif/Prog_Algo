@@ -4,7 +4,7 @@ gobelinPv = 10
 gobelinLvl = 1
 gobelinVaincus =0
 xpJoueur = 0
-lvJoueur =1
+lvJoueur =1 
 degats =0
 touche = ' '
 
