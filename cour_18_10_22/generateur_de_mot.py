@@ -9,4 +9,4 @@ rand2 = random.randint(0, len(verbe)-1)
 rand3 = random.randint(0, len(complement)-1)
 
 for i in range(0,len(sujet)):
-    print(rand1, rand2, rand3,)
+    print(rand1, rand2, rand1, rand3,)

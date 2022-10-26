@@ -50,4 +50,4 @@ while(True):
         print ("Felicitation ma geulle tu es niveau ", lvJoueur)
     
     
-    input()
+    input() 
