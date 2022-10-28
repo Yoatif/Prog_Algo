@@ -1,16 +1,12 @@
-list = [25,14,3,12]
-stock = list[0]
-nList = 0
+list = [25,14,3,12,99,5,43,34,24,54,70]
 
 
-while (list[0] > list[1] or list[1] > list[2] or list[2] > list[3]):
-    for i in range(0,len(list)):
-        if (list[i] < stock):
-            stock = list[i]
-            nList = i
-            print("la plus petite valeur est :", stock)
-            print("l'index de la plus petite valeur est :", nList)
-        else:
-            i = i + 1
 
-        
+for i in range(len (list)):
+        stock=i
+        for j in range(i+1, len (list)):
+            if list[j]<list[stock] :
+                stock = j
+        list[i], list[stock] = list[stock], list[i]
+        print(list)
+    
