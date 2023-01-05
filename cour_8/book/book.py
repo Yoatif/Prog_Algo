@@ -1,3 +1,7 @@
+import random
+import os
+import json
+
 class Chapitre :
     def __init__(self,orGagne,pvPerdu,text,lien):
         self.orGagne = orGagne
@@ -26,6 +30,7 @@ class Personnage:
         self.name = name
         self.hp = hp
         self.gold = 0
+        self.atk = 
     def getNom(self):
         print(self.name)
 
