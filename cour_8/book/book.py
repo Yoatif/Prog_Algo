@@ -3,11 +3,11 @@ import os
 import json
 
 class Chapitre :
-    def __init__(self,orGagne,pvPerdu,text,lien):
+    def __init__(self,orGagne,pvPerdu,text,):
         self.orGagne = orGagne
         self.pvPerdu = pvPerdu
         self.text = text
-        self.listeLien = lien
+        self.listeLien = {1:chapitre0,2:chapitre1,3:chapitre2,4:chapitre3,5:chapitre4,6:chapitre5,7:chapitre6}
     
     def getText(self):
         print(self.text)
@@ -20,7 +20,7 @@ class Chapitre :
     def ListeLien(self):
         print(self.listeLien)
 
-chapitre0 = Chapitre("Vous entrez a l'académie militaire de rorcia, après une séance d'orentation, vous décidé de devenir : 1) guerrier 2 ) mage noir 3) mage blanc 4)archer",0,0,{0:chapitre1,1:chapitre2,2:chapitre3,3:chapitre4})
+chapitre0 = Chapitre("Vous entrez a l'académie militaire de rorcia, après une séance d'orentation, vous décidé de devenir : 1) guerrier 2 ) mage noir 3) mage blanc 4)archer",0,0,0 1)
 chapitre1 = Chapitre("vous choisisez la voie du guerrier, vous recevez une épée en fer et un cadeau de 5 pièce d'or.",0,5,)
 
     
@@ -30,7 +30,7 @@ class Personnage:
         self.name = name
         self.hp = hp
         self.gold = 0
-        self.atk = 
+        self.atk = random()
     def getNom(self):
         print(self.name)
 
