@@ -53,7 +53,7 @@ mob1 = PocketMonster("gentil Alexandre", 100, 5, 2, "eau")
 mob2 = PocketMonster("vilain Alexandre", 100, 5, 2,"feu")
 
 griffe = Attaque("griffe", "neutre", 2, "utilise ses griffes sur le")
-bougieSM = Attaque("bougieSM", "feu", 3, "fait couler de la cire sur le")
+flammiche = Attaque("flammiche", "feu", 3, "fait couler de la cire sur le")
 
 
 
